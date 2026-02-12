@@ -1,0 +1,1 @@
+# rosh-claude-work-files
