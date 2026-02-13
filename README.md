@@ -14,17 +14,17 @@ My personal collection of configs, agents, commands, rules, and scripts for [Cla
 
 | What | How to install | How to use |
 |------|---------------|------------|
-| **Permissions** | Copy `setting.json` to your project as `.claude/settings.json` | Auto-approves safe commands, blocks destructive ones |
-| **Global settings** | Copy `global-settings/*` to `~/.claude/` | Statusline, Slack hooks, and plugins load automatically |
+| **Permissions** | Copy `settings/permission-setting.json` to your project as `.claude/settings.json` | Auto-approves safe commands, blocks destructive ones |
+| **User settings** | Copy `user-settings/*` to `~/.claude/` | Statusline, Slack hooks, and plugins load automatically |
 | **Commands** | Copy `commands/*.md` to `.claude/commands/` (project) or `~/.claude/commands/` (global) | Run `/commit`, `/implement <spec>` in Claude Code |
 | **Agents** | Copy `agents/*.md` to `.claude/commands/` (project) or `~/.claude/commands/` (global) | Run `/code-reviewer` — agents are commands with `model` and `tools` frontmatter |
 | **Rules** | Copy `.claude/rules/*.md` to your project's `.claude/rules/` | Auto-applied when editing files matching the `paths` glob in frontmatter |
 
 ## What's Inside
 
-### Permissions Config
+### Permissions Config (`settings/`)
 
-Controls which Bash commands run without confirmation.
+Controls which Bash commands run without confirmation via `settings/permission-setting.json`.
 
 | Category | Commands | Notes |
 |----------|----------|-------|
@@ -37,7 +37,7 @@ Controls which Bash commands run without confirmation.
 
 Anything not listed (e.g. `rm`, `sudo`, `curl`, `git push --force`) prompts for confirmation.
 
-### Global Settings (`global-settings/`)
+### User Settings (`user-settings/`)
 
 - **`settings.json`** — Global config: custom statusline, enabled plugins (`frontend-design`, `rosh-profile-plugin`), Slack notification hooks
 - **`statusline.sh`** — Shows current dir, git branch, context window usage, and lines changed
