@@ -27,7 +27,7 @@ My personal collection of configs, agents, commands, rules, and scripts for [Cla
 
 ### Permissions Config (`settings/`)
 
-Controls which Bash commands run without confirmation via `settings/permission-setting.json`.
+Controls which Bash commands run without confirmation via [`settings/permission-setting.json`](settings/permission-setting.json).
 
 | Category | Commands | Notes |
 |----------|----------|-------|
@@ -49,22 +49,22 @@ Anything else not in the allowlist (e.g. `rm`, `sudo`, `curl`) prompts for confi
 
 ### User Settings (`user-settings/`)
 
-- **`settings.json`** — Global config: custom statusline, enabled plugins (`frontend-design`, `rosh-profile-plugin`), Slack notification hooks
-- **`statusline.sh`** — Shows current dir, git branch, context window usage, and lines changed
-- **`slack-notify.sh`** — Sends Slack notifications when Claude Code finishes a task or needs attention
+- **[`settings.json`](user-settings/settings.json)** — Global config: custom statusline, enabled plugins (`frontend-design`, `rosh-profile-plugin`), Slack notification hooks
+- **[`statusline.sh`](user-settings/statusline.sh)** — Shows current dir, git branch, context window usage, and lines changed
+- **[`slack-notify.sh`](user-settings/slack-notify.sh)** — Sends Slack notifications when Claude Code finishes a task or needs attention
 
 ### Commands (`commands/`)
 
-- **`commit.md`** — `/commit` — Stages and commits changes with a message matching the repo's existing style
-- **`implement.md`** — `/implement <spec-name>` — Reads a spec from `docs/specs/`, implements the next phase using TDD, commits, and updates the spec
+- **[`commit.md`](commands/commit.md)** — `/commit` — Stages and commits changes with a message matching the repo's existing style
+- **[`implement.md`](commands/implement.md)** — `/implement <spec-name>` — Reads a spec from `docs/specs/`, implements the next phase using TDD, commits, and updates the spec
 
 ### Agents (`agents/`)
 
-- **`code-reviewer.md`** — `/code-reviewer` — Reviews staged changes for type safety, error handling, and untested code paths (Sonnet, read-only)
+- **[`code-reviewer.md`](agents/code-reviewer.md)** — `/code-reviewer` — Reviews staged changes for type safety, error handling, and untested code paths (Sonnet, read-only)
 
 ### Rules (`.claude/rules/`)
 
-- **`supabase.md`** — Auto-applies when editing `supabase/**`, `src/lib/supabase/**`, or `*.sql` — enforces RLS policies, generated types, and role-based testing
+- **[`supabase.md`](.claude/rules/supabase.md)** — Auto-applies when editing `supabase/**`, `src/lib/supabase/**`, or `*.sql` — enforces RLS policies, generated types, and role-based testing
 
 ### Guides (`guides/`)
 
@@ -73,7 +73,7 @@ Anything else not in the allowlist (e.g. `rm`, `sudo`, `curl`) prompts for confi
 
 ### CLAUDE.md Templates (`claude-md-files/`)
 
-- **`simple-next-claude.md`** — Starter `CLAUDE.md` for Next.js 15 + Supabase + Tailwind projects — defines commands, stack, conventions, and testing patterns
+- **[`simple-next-claude.md`](claude-md-files/simple-next-claude.md)** — Starter `CLAUDE.md` for Next.js 15 + Supabase + Tailwind projects — defines commands, stack, conventions, and testing patterns
 
 ### Project Config (`.claude/`)
 
