@@ -36,6 +36,12 @@ Located in `global-settings/` — these go in `~/.claude/`.
 
 - **`global-settings/slack-notify.sh`** - Slack webhook script that sends notifications when Claude Code finishes a task or needs attention.
 
+### Agents
+
+Located in `agents/` — copy to `.claude/commands/` in a project or `~/.claude/commands/` for global use.
+
+- **`agents/code-reviewer.md`** (`/code-reviewer`) - Reviews staged changes for type safety violations, missing error handling, and untested code paths. Uses Sonnet model. Read-only — never modifies files.
+
 ### Slash Commands
 
 Located in `commands/` — copy to `.claude/commands/` in a project or `~/.claude/commands/` for global use.
