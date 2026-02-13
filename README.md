@@ -36,6 +36,13 @@ Located in `global-settings/` — these go in `~/.claude/`.
 
 - **`global-settings/slack-notify.sh`** - Slack webhook script that sends notifications when Claude Code finishes a task or needs attention.
 
+### Slash Commands
+
+Located in `commands/` — copy to `.claude/commands/` in a project or `~/.claude/commands/` for global use.
+
+- **`commands/commit.md`** (`/commit`) - Stages and commits changes with a concise message that matches the repo's existing commit style.
+- **`commands/implement.md`** (`/implement <spec-name>`) - Reads a spec from `docs/specs/`, implements the next unchecked phase using TDD (tests first, fix before moving on), commits, and updates the spec.
+
 ## Usage
 
 **Project-level permissions:** Copy `setting.json` to your project as `.claude/settings.json`.
