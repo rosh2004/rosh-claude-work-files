@@ -68,8 +68,8 @@ Anything else not in the allowlist (e.g. `rm`, `sudo`, `curl`) prompts for confi
 
 ### Guides (`guides/`)
 
-- **`claude-code-patterns.md`** — Battle-tested cheatsheet covering CLAUDE.md structure, permissions, slash commands, agents, hooks, and subagent usage patterns
-- **`spec-workflow-guide.md`** — Spec-driven development workflow: planning sessions, phased implementation, task sizing, and troubleshooting
+- **[`claude-code-patterns.md`](guides/claude-code-patterns.md)** — Battle-tested cheatsheet covering CLAUDE.md structure, permissions, slash commands, agents, hooks, and subagent usage patterns
+- **[`spec-workflow-guide.md`](guides/spec-workflow-guide.md)** — Spec-driven development workflow: planning sessions, phased implementation, task sizing, and troubleshooting
 
 ### CLAUDE.md Templates (`claude-md-files/`)
 
