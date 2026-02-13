@@ -66,6 +66,11 @@ Anything else not in the allowlist (e.g. `rm`, `sudo`, `curl`) prompts for confi
 
 - **`supabase.md`** — Auto-applies when editing `supabase/**`, `src/lib/supabase/**`, or `*.sql` — enforces RLS policies, generated types, and role-based testing
 
+### Guides (`guides/`)
+
+- **`claude-code-patterns.md`** — Battle-tested cheatsheet covering CLAUDE.md structure, permissions, slash commands, agents, hooks, and subagent usage patterns
+- **`spec-workflow-guide.md`** — Spec-driven development workflow: planning sessions, phased implementation, task sizing, and troubleshooting
+
 ### CLAUDE.md Templates (`claude-md-files/`)
 
 - **`simple-next-claude.md`** — Starter `CLAUDE.md` for Next.js 15 + Supabase + Tailwind projects — defines commands, stack, conventions, and testing patterns
