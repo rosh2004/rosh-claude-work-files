@@ -20,6 +20,10 @@
       "Bash(cat *)",
       "Bash(ls *)",
       "Bash(grep *)"
+    ],
+    "deny": [
+      "Bash(git push --force *)",
+      "Bash(npm publish *)"
     ]
   }
 }
