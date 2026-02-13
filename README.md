@@ -10,6 +10,8 @@ My personal collection of configs, agents, commands, rules, and scripts for [Cla
 
 **Rules** are context files that auto-inject into the prompt when you edit files matching their `paths` glob. They enforce project conventions (e.g. always use RLS with Supabase) without you having to repeat instructions. Best used for framework-specific or domain-specific guardrails.
 
+**CLAUDE.md** is the project-level instruction file that Claude Code reads on startup. It defines your stack, conventions, commands, and testing patterns — think of it as the project brief Claude always has in context. Place it at the root of your repo.
+
 ## Quick Start
 
 | What | How to install | How to use |
@@ -19,6 +21,7 @@ My personal collection of configs, agents, commands, rules, and scripts for [Cla
 | **Commands** | Copy `commands/*.md` to `.claude/commands/` (project) or `~/.claude/commands/` (global) | Run `/commit`, `/implement <spec>` in Claude Code |
 | **Agents** | Copy `agents/*.md` to `.claude/commands/` (project) or `~/.claude/commands/` (global) | Run `/code-reviewer` — agents are commands with `model` and `tools` frontmatter |
 | **Rules** | Copy `.claude/rules/*.md` to your project's `.claude/rules/` | Auto-applied when editing files matching the `paths` glob in frontmatter |
+| **CLAUDE.md** | Copy a template from `claude-md-files/` to the root of your project as `CLAUDE.md` | Auto-read by Claude Code on startup — defines stack, conventions, and commands |
 
 ## What's Inside
 
@@ -35,7 +38,14 @@ Controls which Bash commands run without confirmation via `settings/permission-s
 | npx | `jest`, `prettier`, `eslint`, `tsc` | Scoped to specific tools only |
 | File inspection | `cat`, `ls`, `grep` | Read-only |
 
-Anything not listed (e.g. `rm`, `sudo`, `curl`, `git push --force`) prompts for confirmation.
+**Denied commands** — these are always blocked, even if you approve manually:
+
+| Command | Reason |
+|---------|--------|
+| `git push --force *` | Prevents rewriting shared history |
+| `npm publish *` | Prevents accidental package publishes |
+
+Anything else not in the allowlist (e.g. `rm`, `sudo`, `curl`) prompts for confirmation.
 
 ### User Settings (`user-settings/`)
 
@@ -55,3 +65,15 @@ Anything not listed (e.g. `rm`, `sudo`, `curl`, `git push --force`) prompts for 
 ### Rules (`.claude/rules/`)
 
 - **`supabase.md`** — Auto-applies when editing `supabase/**`, `src/lib/supabase/**`, or `*.sql` — enforces RLS policies, generated types, and role-based testing
+
+### CLAUDE.md Templates (`claude-md-files/`)
+
+- **`simple-next-claude.md`** — Starter `CLAUDE.md` for Next.js 15 + Supabase + Tailwind projects — defines commands, stack, conventions, and testing patterns
+
+### Project Config (`.claude/`)
+
+The `.claude/` directory is the active config for this project. It contains:
+
+- **`setting.json`** — Project-scoped permissions (allow/deny lists) applied when Claude Code runs in this repo
+- **`commands/`** — Local copies of commands and agents available as `/name` slash commands
+- **`rules/`** — Context rules that auto-inject when editing matching file paths
