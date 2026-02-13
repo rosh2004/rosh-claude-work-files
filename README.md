@@ -2,6 +2,14 @@
 
 My personal collection of configs, agents, commands, rules, and scripts for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
+## Claude Code Guide
+
+**Commands** are reusable prompt templates (`.md` files) you invoke with `/name`. They act like slash-command macros — great for repetitive workflows like committing, generating tests, or running multi-step processes. Keep them focused on a single task.
+
+**Agents** are commands with a `model` and `tools` frontmatter — they spawn a sub-agent with restricted tool access and a specific model. Use agents for autonomous, scoped tasks (code review, migrations) where you want Claude to operate independently without full permissions.
+
+**Rules** are context files that auto-inject into the prompt when you edit files matching their `paths` glob. They enforce project conventions (e.g. always use RLS with Supabase) without you having to repeat instructions. Best used for framework-specific or domain-specific guardrails.
+
 ## Quick Start
 
 | What | How to install | How to use |
